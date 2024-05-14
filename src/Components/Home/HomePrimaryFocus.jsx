@@ -14,7 +14,7 @@ const FocusCards = ({ icon, title, desc, onClick, layoutId }) => {
             exit={{ opacity: 0, y: 50 }}
             whileHover={{ scale: 1.05 }}
             onClick={onClick}
-            layoutId={layoutId} // Use a unique identifier for each card's layout
+            layoutId={layoutId} 
         >
             {icon}
             <div className="flex flex-col gap-1 items-start w-full">

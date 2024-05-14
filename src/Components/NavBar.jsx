@@ -5,7 +5,7 @@ import { MdContactPage } from "react-icons/md";
 
 const NavBar = ({ handleNavClick, isExpanded }) => {
   return (
-    <aside className={`flex shadow-xl flex-col items-center transition-all delay-50 justify-between ${isExpanded ? 'w-1/6' : 'w-14'}`}> 
+    <aside className={`flex shadow-xl flex-col items-center bg-white h-screen transition-all delay-50 justify-between ${isExpanded ? 'w-1/6' : 'w-14'}`}> 
       <div className="flex flex-col items-center mt-10 p-4">
         {isExpanded ? (
           <>

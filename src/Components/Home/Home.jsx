@@ -1,10 +1,10 @@
 import HomeBasicInfo from "../../sub-components/HomebasicInfo";
 import HomeLanguages from "./HomeLanguages";
 import HomePrimaryFocus from "./HomePrimaryFocus";
-const Home = () => {
+const Home = ({isExpanded}) => {
   return (
     <>
-      <div className="h-screen flex flex-col items-start w-full p-6 ">
+      <div className={`h-screen flex flex-col items-start w-full transition-all p-6 ${isExpanded?'ml-[18%]':'ml-16'}`}>
         <div className="bg-white p-4 rounded-full ">
           <label className="text-[80px] text-gray-700 ">About</label>
         </div>
