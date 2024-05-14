@@ -40,7 +40,10 @@ const Home = ({isExpanded}) => {
           <label className="text-[40px] text-gray-700 ">
             Education
           </label>
+          <div>
+            
           <VerticalLinearStepper/>
+          </div>
         </div>
       </div>
     </>
