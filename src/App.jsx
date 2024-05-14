@@ -3,6 +3,7 @@ import "./App.css";
 import Home from "./Components/Home/Home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NavBar from "./Components/NavBar";
+import Projects from "./Components/Projects/Projects";
 
 function App() {
   const [isExpanded, setIsExpanded] = useState(true);
@@ -29,7 +30,7 @@ function App() {
         </div>
         <Routes>
           <Route path="/" element={<Home isExpanded={isExpanded} />} />
-          <Route path="/projects" element={<div>Projects Page</div>} />
+          <Route path="/projects" element={<Projects isExpanded={isExpanded}/>}/>
         </Routes>
       </div>
     </Router>
