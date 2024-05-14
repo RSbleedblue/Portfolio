@@ -7,29 +7,22 @@ import StepContent from '@mui/material/StepContent';
 import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import { blue } from '@mui/material/colors';
-import { color } from 'framer-motion';
-
-
 
 const steps = [
   {
     label: 'Masters in Computer Application, 2024',
-    description: `For each ad campaign that you create, you can control how much
-              you're willing to spend on clicks and conversions, which networks
-              and geographical locations you want your ads to show on, and more.`,
+    description: `
+    I completed my Master of Computer Applications (MCA) at Sharda University, achieving an impressive aggregate score of 9.4. This rigorous program equipped me with advanced knowledge and skills in software development, data structures, algorithms, and database management. `,
   },
   {
     label: 'Bachelor in Computer Application, 2022',
     description:
-      'An ad group contains one or more ads which target a shared set of keywords.',
+      'I earned my Bachelor of Computer Applications (BCA) from IMS Noida, graduating with a score of 72%. During this program, I gained a solid foundation in computer science principles, including programming, web development, and system analysis. My education at IMS Noida involved practical projects and collaborative learning, which helped me develop essential technical and analytical skills, laying the groundwork for my advanced studies and career in the IT field.',
   },
   {
     label: 'Intermediate, 2017',
-    description: `Try out different ad text to see what brings in the most customers,
-              and learn how to enhance your ads using features like ad extensions.
-              If you run into any problems with your ads, find out how to tell if
-              they're running and how to resolve approval issues.`,
+    description: `
+    I completed my Intermediate education with a focus on Physics, Chemistry, and Mathematics (PCM) under the CBSE board, securing 66%. This phase of my education provided me with a strong analytical and scientific foundation, fostering critical thinking and problem-solving abilities.`,
   },
 ];
 
@@ -72,13 +65,7 @@ export default function VerticalLinearStepper() {
       <Stepper activeStep={activeStep} orientation="vertical" className='shadow-xl rounded-lg p-4 m-2 w-full' sx={stepStyle}>
         {steps.map((step, index) => (
           <Step key={step.label}>
-            <StepLabel 
-              optional={
-                index === 2 ? (
-                  <Typography variant="caption">Last step</Typography>
-                ) : null
-              }
-            >
+            <StepLabel>
               {step.label}
             </StepLabel>
             <StepContent>
@@ -108,7 +95,7 @@ export default function VerticalLinearStepper() {
       {activeStep === steps.length && (
         <Paper square elevation={0} >
           <Button onClick={handleReset} sx={{color:"#10b981"}}>
-            Reset
+            Review Again?
           </Button>
         </Paper>
       )}
