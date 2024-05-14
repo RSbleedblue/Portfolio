@@ -1,13 +1,14 @@
 import VerticalLinearStepper from "../../sub-components/EducationLineStepper";
 import HomeBasicInfo from "../../sub-components/HomebasicInfo";
+import WorkLineStepper from "../../sub-components/WorkLineStepper";
 
 import HomeLanguages from "./HomeLanguages";
 import HomePrimaryFocus from "./HomePrimaryFocus";
 
-const Home = ({isExpanded}) => {
+const Home = ({ isExpanded }) => {
   return (
     <>
-      <div className={`h-screen flex flex-col items-start gap-10 w-full transition-all p-6 ${isExpanded?'ml-[16%]':'ml-14'}`}>
+      <div className={`h-screen flex flex-col items-start gap-10 w-full transition-all p-6 ${isExpanded ? 'ml-[16%]' : 'ml-14'}`}>
         <div className="bg-white p-4 rounded-full ">
           <label className="text-[80px] text-gray-700 ">About</label>
         </div>
@@ -41,8 +42,15 @@ const Home = ({isExpanded}) => {
             Education
           </label>
           <div>
-            
-          <VerticalLinearStepper/>
+            <VerticalLinearStepper />
+          </div>
+        </div>
+        <div className="w-[70%]  p-4 shadow-xl rounded-lg">
+          <label className="text-[40px] text-gray-700 ">
+            Work Experience
+          </label>
+          <div>
+            <WorkLineStepper />
           </div>
         </div>
       </div>

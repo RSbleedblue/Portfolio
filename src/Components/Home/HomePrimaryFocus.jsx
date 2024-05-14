@@ -80,10 +80,10 @@ const HomePrimaryFocus = () => {
                 {selectedId && selectedItem && (
                     <motion.div
                         layoutId={selectedId}
-                        className="fixed inset-0 flex items-center justify-center transition-all delay-500  bg-opacity-70"
+                        className="fixed inset-0 flex items-center justify-center transition-all delay-200 bg-opacity-70"
                         style={{ backdropFilter: 'blur(8px)' }}
                     >
-                        <motion.div className="w-[30%] p-6 rounded-lg shadow-xl bg-white transition-all delay-500 flex flex-col gap-2">
+                        <motion.div className="w-[30%] p-6 rounded-lg shadow-xl bg-white transition-all delay-200 flex flex-col gap-2">
                             <motion.h1 className="text-xl font-semibold">{selectedItem.subtitle}</motion.h1>
                             <motion.h2 className="text-sm text-gray-600">{selectedItem.title}</motion.h2>
                             <motion.p className="text-sm">{selectedItem.desc}</motion.p>
