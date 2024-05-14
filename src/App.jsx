@@ -15,13 +15,13 @@ function App() {
   };
 
   return (
-    <Router> 
-      <div className="flex gap-10">
+    <Router>
+      <div className="flex gap-10 ">
         <NavBar
           handleNavClick={handleNavClick}
           isExpanded={isExpanded}
           selectedOption={selectedOption}
-        /> 
+        />
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>

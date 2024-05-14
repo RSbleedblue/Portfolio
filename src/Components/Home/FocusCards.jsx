@@ -1,6 +1,6 @@
 const FocusCards = ({ icon, title, desc }) => {
     return (
-        <div className="w-[50%] p-6 rounded-lg shadow-xl flex items-center justify-start gap-4">
+        <div className="w-[48%] p-6 rounded-lg shadow-xl flex items-center justify-start gap-4">
             {icon}
             <div className="flex flex-col gap-1 items-start w-full">
                 <p className="text-l font-semibold">{title}</p>
