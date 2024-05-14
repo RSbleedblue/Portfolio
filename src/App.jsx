@@ -17,7 +17,7 @@ function App() {
   return (
     <Router>
       <div className="flex gap-10">
-        <div className="fixed z-50 inset-0">
+        <div className="fixed ">
         <NavBar
           handleNavClick={handleNavClick}
           isExpanded={isExpanded}
