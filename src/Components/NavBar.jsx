@@ -1,47 +1,45 @@
 import React, { useState } from "react";
-import { FaHome, FaTimes, FaProjectDiagram, FaTwitter, FaGithub, FaInstagram, FaLinkedin, FaChevronCircleRight, FaChevronCircleLeft } from "react-icons/fa";
+import { FaHome, FaChevronCircleRight, FaChevronCircleLeft, FaProjectDiagram, FaTwitter, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { PiCertificateFill } from "react-icons/pi";
 import { MdContactPage } from "react-icons/md";
+import { Link } from "react-router-dom";
 
-const NavBar = ({ handleNavClick, isExpanded }) => {
+const NavBar = ({ handleNavClick, isExpanded, selectedOption, handleSelection }) => {
   return (
-    <aside className={`flex shadow-xl flex-col items-center bg-white h-screen transition-all delay-50 justify-between ${isExpanded ? 'w-full' : 'w-14'}`}> 
+    <aside className={`flex shadow-xl flex-col items-center bg-white h-screen transition-all delay-50 justify-between ${isExpanded ? 'w-full' : 'w-14'}`}>
       <div className="flex flex-col items-center mt-10 p-4">
         {isExpanded ? (
           <>
             <div className="w-28 h-28 rounded-full shadow-xl cursor-pointer hover:bg-green-300 transition duration-300 items-center flex justify-center">
               <img
                 src="https://avatars.githubusercontent.com/u/48222792?v=4"
-                className="w-[90%] h-[90%] rounded-full "
+                className="w-[90%] h-[90%] rounded-full"
                 alt="Profile Picture"
               />
             </div>
-            <p className="text-gray-700 font-semibold text-xl mt-2 w-full" >
+            <p className="text-gray-700 font-semibold text-xl mt-2 w-full">
               Rivansh Srivastava
             </p>
             <p className="font-mono text-sm text-gray-600">
               Full Stack Developer
             </p>
-                
             <FaChevronCircleLeft className="text-emerald-600 cursor-pointer hover:text-emerald-300 text-2xl mt-4" onClick={handleNavClick} />
-              
           </>
         ) : (
           <>
             <div className="w-14 h-14 rounded-full shadow-xl cursor-pointer hover:bg-green-300 transition duration-100 items-center flex justify-center">
               <img
                 src="https://avatars.githubusercontent.com/u/48222792?v=4"
-                className="w-[90%] h-[90%] rounded-full "
+                className="w-[90%] h-[90%] rounded-full"
                 alt="Profile Picture"
               />
-              
             </div>
             <FaChevronCircleRight className="text-emerald-600 cursor-pointer hover:text-emerald-300 text-2xl mt-10" onClick={handleNavClick} />
           </>
         )}
       </div>
       <ul className="flex flex-col gap-6 text-xl items-start text-gray-600 w-full">
-        <li className="flex gap-4 items-center justify-center w-full hover:bg-emerald-950 hover:text-gray-100 hover:shadow-xl rounded-r-xl p-2 transition-all cursor-pointer">
+        <Link to="/" className={`flex gap-4 items-center justify-center w-full ${selectedOption === "about" ? 'bg-emerald-950 text-gray-100' : 'hover:bg-emerald-950 hover:text-gray-100'} hover:shadow-xl rounded-r-xl p-2 transition-all cursor-pointer`} onClick={() => handleSelection("about")}>
           {isExpanded ? (
             <>
               <FaHome />
@@ -50,8 +48,8 @@ const NavBar = ({ handleNavClick, isExpanded }) => {
           ) : (
             <FaHome className="text-emerald-600 text-2xl" />
           )}
-        </li>
-        <li className="flex gap-4 items-center justify-center w-full hover:bg-emerald-950 hover:text-gray-100 rounded-r-xl hover:shadow-xl p-2 transition-all cursor-pointer">
+        </Link>
+        <Link to="/projects" className={`flex gap-4 items-center justify-center w-full ${selectedOption === "projects" ? 'bg-emerald-950 text-gray-100' : 'hover:bg-emerald-950 hover:text-gray-100'} hover:shadow-xl rounded-r-xl p-2 transition-all cursor-pointer`} onClick={() => handleSelection("projects")}>
           {isExpanded ? (
             <>
               <FaProjectDiagram />
@@ -60,8 +58,8 @@ const NavBar = ({ handleNavClick, isExpanded }) => {
           ) : (
             <FaProjectDiagram className="text-emerald-600 text-2xl" />
           )}
-        </li>
-        <li className="flex gap-4 items-center justify-center w-full hover:bg-emerald-950 hover:text-gray-100 rounded-r-xl hover:shadow-xl p-2 transition-all cursor-pointer">
+        </Link>
+        <li className={`flex gap-4 items-center justify-center w-full ${selectedOption === "awards" ? 'bg-emerald-950 text-gray-100' : 'hover:bg-emerald-950 hover:text-gray-100'} hover:shadow-xl rounded-r-xl p-2 transition-all cursor-pointer`} onClick={() => handleSelection("awards")}>
           {isExpanded ? (
             <>
               <PiCertificateFill />
@@ -71,7 +69,7 @@ const NavBar = ({ handleNavClick, isExpanded }) => {
             <PiCertificateFill className="text-emerald-600 text-2xl" />
           )}
         </li>
-        <li className="flex gap-4 items-center justify-center w-full hover:bg-emerald-950 hover:text-gray-100 rounded-r-xl hover:shadow-xl p-2 transition-all cursor-pointer">
+        <li className={`flex gap-4 items-center justify-center w-full ${selectedOption === "contact" ? 'bg-emerald-950 text-gray-100' : 'hover:bg-emerald-950 hover:text-gray-100'} hover:shadow-xl rounded-r-xl p-2 transition-all cursor-pointer`} onClick={() => handleSelection("contact")}>
           {isExpanded ? (
             <>
               <MdContactPage />
