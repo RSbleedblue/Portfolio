@@ -27,7 +27,7 @@ const Home = () => {
             <HomeLanguages />
           </div>
         </div>
-        <div className="w-[70%] -mt-[14%] p-4 shadow-xl rounded-lg">
+        <div className="w-[70%] -mt-[20%] p-4 shadow-xl rounded-lg">
           <label className="text-[40px] text-gray-700 ">
             Primary focus
           </label>
